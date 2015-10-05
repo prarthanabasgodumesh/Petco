@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pet_name: MyString
+  type_of_pet: MyString
+  breed: MyString
+  age: MyString
+  weight: MyString
+  date_0f_last_visit: MyString
+
+two:
+  pet_name: MyString
+  type_of_pet: MyString
+  breed: MyString
+  age: MyString
+  weight: MyString
+  date_0f_last_visit: MyString

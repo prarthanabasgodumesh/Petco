@@ -1,0 +1,30 @@
+<table>
+<tr>
+<th>Name</th>
+<th>Address</th>
+<th>City</th>
+<th>State</th>
+<th>Zip</th>
+<th>Graduated from</th>
+<th>Years in practice</th>
+</tr>
+<% @user.each do |f|%>
+<tr>
+	<% if f.position == "Helper" %>
+<td><%= f.name %></td>
+<td><%= f.address %></td>
+<td><%= f.city %></td>
+<td><%= f.state %></td>
+<td><%= f.zip %></td>
+<td><%= f.last_graduated_from %></td>
+<td><%= f.total_practice %></td>
+<%end%>
+</tr>
+<%end%>
+
+<% if (User.find session[:user_id]).position== "Head"%>
+<tr>
+<td><%= link_to "see appoinments" , appointments_path%></td>
+</tr>
+<%end%>
+</table>

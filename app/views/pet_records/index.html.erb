@@ -1,0 +1,17 @@
+<table>
+	<tr>
+		
+		<td>Pet Name</td>
+		<td>Date of Next Appointment</td>
+		<td>Reason for Visit</td>
+
+	</tr>
+	<% @pet_record.each do |a|%>
+	<td><%= a.pet_name%></td>
+	<td><%= a.date_0f_last_visit%></td>
+	<td><%= a.reminder_date%></td>
+	<td><%= @appointment.reason_of_visit%></td>
+	<%end%>
+	<tr>
+	</tr>
+</table>

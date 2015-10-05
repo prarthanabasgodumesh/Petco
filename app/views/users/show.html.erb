@@ -1,0 +1,32 @@
+<table>
+<tr>
+<th>Name</th>
+<th>Address</th>
+<th>City</th>
+<th>State</th>
+<th>Zip</th>
+<th>Graduated from</th>
+<th>Years in practice</th>
+</tr>
+<tr>
+<td><%= @user.name %></td>
+<td><%= @user.address %></td>
+<td><%= @user.city %></td>
+<td><%= @user.state %></td>
+<td><%= @user.zip %></td>
+<td><%= @user.last_graduated_from %></td>
+<td><%= @user.total_practice %></td>
+</tr>
+
+
+<% if (User.find session[:user_id]).position== "Head"%>
+<tr>
+<td><%= link_to "additional veterinary", :controller=>"users", :action=>"index" %><td>
+</tr>
+	<tr>
+<td><%= link_to "see appoinments" , appointments_path%><td>
+</tr>
+<%else%>
+<%= link_to "see appoinments" , appointments_path%>
+<%end%>
+</table>

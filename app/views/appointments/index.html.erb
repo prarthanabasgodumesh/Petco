@@ -1,0 +1,21 @@
+<table>
+	<tr>
+		
+		<td>Pet</td>
+		<td>Date of visit</td>
+		<td>Customer</td>
+		<td>Reminder of Appointment</td>
+		<td>Reason for Visit</td>
+
+	</tr>
+	<% @appointment.each do |a|%>
+	<td><%= link_to a.pet_name, new_pet_record_path(:appointmen_id=>a.id)%></td>
+	<td><%= a.visit_date%></td>
+	<td><%= a.customer_email%></td>
+	<td><%= a.reminder_date%></td>
+	<td><%= a.reason_of_visit%></td>
+	<%end%>
+	<tr>
+	</tr>
+</table>
+<%= link_to "New Appointment" , new_appointment_path if current_user.position == "receptionist"%>

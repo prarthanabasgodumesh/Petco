@@ -1,0 +1,17 @@
+<%= form_for @appointment do |form| %>
+<%= form.label :visit_date%>
+<%= form.date_select :visit_date%>
+<%= form.label :pet_name, "Pet"%>
+<%= form.text_field :pet_name%>
+<%= form.label :customer_email, "Customer Email"%>
+<%= form.text_field :customer_email%>
+<%= form.label :reminder_date, "Requires Reminder of Appointment"%>
+<%= form.check_box :reminder_date, {}, "true", "false"%>
+<%= form.label :reason_of_visit, "Reason for Visit"%>
+<%= form.text_field :reason_of_visit%>
+<%= form.select :user_id, User.where("position is 'Head' or position is 'Helper'").collect{|a|[a.name,a.id]}%>
+<%= form.submit%>
+
+<%end%>
+
+<%= link_to "See Appointment" , appointments_path%>

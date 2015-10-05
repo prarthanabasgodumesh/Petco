@@ -1,0 +1,18 @@
+<table>
+<tr>
+<th>Name</th>
+<th>Email</th>
+<th>Contact No</th>
+</tr>
+<% @user.each do |f|%>
+<tr>
+<td><%= f.name %></td>
+<td><%= f.email %></td>
+<td><%= f.contact_no %></td>
+<td><%= link_to "Edit", edit_user_path(f)%></td>
+<td><%= link_to "Delete", f, :method => "delete", :data=>{:confirm=>"Are You sure!"} %></td>
+</tr>
+<%end%>
+</table>
+
+<%= link_to "New User", :controller=>"users", :action=>"new"%>

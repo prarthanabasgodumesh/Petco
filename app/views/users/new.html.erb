@@ -1,0 +1,55 @@
+<% if @user.errors.any? %>
+  <% @user.errors.messages.each  do |msg|%>
+    <%= msg%>
+  <%end%>
+<%end%>
+
+
+<%= form_for @user do |f| %>
+<table>
+  <tr>
+    <td><%= f.label :name%></td>
+    <td><%= f.text_field :name%></td>
+</tr>
+  <tr>
+    <td><%= f.label :email%></td>
+    <td><%= f.text_field :email%></td>
+  </tr>
+  <tr>
+    <td><%= f.label :password%></td>
+    <td><%= f.password_field :password%></td>
+  </tr>
+  <tr>
+    <td><%= f.label :confirm_password%></td>
+    <td><%= f.password_field :confirm_password%></td>
+  </tr>
+  <tr>
+    <td><%= f.label :address%></td>
+    <td><%= f.text_field :address%></td>
+  </tr>
+    <tr>
+    <td><%= f.label :city%></td>
+    <td><%= f.text_field :city%></td>
+  </tr>
+    <tr>
+    <td><%= f.label :state%></td>
+    <td><%= f.text_field :state%></td>
+  </tr>
+    <tr>
+    <td><%= f.label :zip%></td>
+    <td><%= f.text_field :zip%></td>
+  </tr>
+    <tr>
+    <td><%= f.label :last_graduated_from%></td>
+    <td><%= f.text_field :last_graduated_from%></td>
+  </tr>
+    <tr>
+    <td><%= f.label :total_practice%></td>
+    <td><%= f.text_field :total_practice%></td>
+  </tr>
+  <tr>
+    <td><%= f.submit "Register"%></td>
+  </tr>
+</table>
+<%end%>
+<%= link_to "Go Back", :controller=>"users", :action=>"index"%>

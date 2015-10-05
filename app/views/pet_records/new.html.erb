@@ -1,0 +1,17 @@
+
+<%= form_for([@pet_record], :url=> {:controller=>"pet_records",:action=>"create",:appointment_id=> params["appointmen_id"]}) do |form| %>
+<%= form.label :pet_name%>
+<%= form.text_field :pet_name%>
+<%= form.label :type_of_pet%>
+<%= form.select :type_of_pet, ["dog", "cat", "bird"]%>
+<%= form.label :breed%>
+<%= form.text_field :breed%>
+<%= form.label :age%>
+<%= form.text_field :age%>
+<%= form.label :weight%>
+<%= form.text_field :weight%>
+<%= form.label :date_0f_last_visit%>
+<%= form.date_select :date_0f_last_visit%>
+<%= form.submit%>
+
+<%end%>
